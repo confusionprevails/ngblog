@@ -1,4 +1,5 @@
 
+Simple Text:
 
 AngularJS is a Single Page Application (or SPA) development framework and enables 
 developers to rapidly develop complex and large applications with ease. 
@@ -11,13 +12,20 @@ AngularJS is built on the following philosophies-
 4.  Dependency Injection
 5.  Test, Test and Test
 
+Link:
+http://google.com
 
-### Data Driven Apps
-In traditional Web Apps, we need to send/receive data through AJAX calls, identify the UI elements, update the UI elements. 
-There is a lot of boilerplate code we need to write.
+Blockquotes:
+> BlockQuotes
 
-AngularJS's core feature - data-binding can save several lines of code. Data-Binding allows us to bind data to HTML and it automatically takes
- care of updating the UI whenever the data changes.
+
+![alt text][logo]
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+
+
+
+Code
   
 eg.
 
@@ -38,17 +46,12 @@ in a more meaningful and encapsulated way. You achieve this declarative paradigm
 
 In terms of code - 
 
-    <ul class="nav nav-tabs">
-      <li>Home</li>
-      <li class="selected">Profile</li>
-    </ul>
-    
-    <div class="tab1">
-        Some content here
-    </div>
-    <div class="tab2">
-        <input id="startDate" type="text"/>
-    </div>
+```
+function test() {
+  console.log("notice the blank line before this function?");
+}
+```
+
     
     
 
@@ -68,10 +71,35 @@ The above code snippet (which represents navigational tabs) can be converted int
 
 `<tabs>` and `datepicker` being the new directive that a developer can build out.
 
+
+Tables:
+
+Colons can be used to align columns.
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+
 The advantages of this approach-
 - its declarative, just looking at the code we can see its trying to create tabs with a date picker in it
 - entire tabs functionality is encapsulated and contained in one place. Now you don't need to find and replace every time this tab's behaviour changes
 - *directives* are also a way to extend the HTMLs capabilities with your own functional tags 
+
+
+YouTube Video:
+
+<a href="https://www.youtube.com/watch?v=Pc_KjZ-qTbQ" target="_blank">
+<img src="http://img.youtube.com/vi/Pc_KjZ-qTbQ/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
+
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/Pc_KjZ-qTbQ/0.jpg)](http://www.youtube.com/watch?v=Pc_KjZ-qTbQ)
+
+
  
 ### Separation of Concerns
 AngularJS adopts MVC pattern. The actual data (model), the user interface (view) and the business-logic to fetch data, validate data, store data(controller) are the building blocks of your application.

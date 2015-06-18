@@ -37,6 +37,9 @@ module.exports = function(config) {
       'bower_components/showdown/src/showdown.js',
       'bower_components/angular-markdown-directive/markdown.js',
       'bower_components/lodash/lodash.js',
+      'bower_components/marked/lib/marked.js',
+      'bower_components/angular-marked/angular-marked.js',
+      'bower_components/highlightjs/highlight.pack.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

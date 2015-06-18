@@ -21,7 +21,7 @@
     <div class="email-item  pure-g"  ng-repeat="post in categoryList" ng-class="{'email-item-unread email-item-selected': post.slug===selectedItem}"
          ng-click="listClick(post.slug)" >
         <div class="pure-u">
-            <img class="email-avatar" alt="Tilo Mitra&#x27;s avatar" height="64" width="64" src="img/common/tilo-avatar.png">
+            <!--img class="email-avatar" alt="Tilo Mitra&#x27;s avatar" height="64" width="64" src="img/common/tilo-avatar.png"-->
         </div>
 
         <div class="pure-u-3-4">
@@ -29,8 +29,6 @@
             <h4 class="email-subject">{{post.title}}</h4>
             <p class="email-desc">
                 {{post.description}}
-                {{post.slug}}
-
             </p>
         </div>
     </div>
@@ -55,7 +53,7 @@
         </div>
 
         <div class="email-content-body">
-            <div btf-markdown ng-include="getSelectedItem()">
+            <div marked ng-include="getSelectedItem()">
             </div>
         </div>
     </div>

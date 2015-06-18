@@ -4,7 +4,9 @@
   color: #000;
   padding: 0.2em 0;
 }
-code{background:grey; border:black dashed 1px; padding:6px;color:#f5f5f5}
+/*code{background:grey; border:black dashed 1px; padding:6px;color:#f5f5f5}*/
+
+/*code{background-color: lightgoldenrodyellow}*/
 
 .active-link {
     background: rgb(55, 60, 90);

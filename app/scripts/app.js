@@ -17,9 +17,17 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch','ui.router','btford.markdown'
+    'ngTouch','ui.router','hc.marked'/*'btford.markdown'*/
   ])
-  .config(function ($stateProvider, $urlRouterProvider, $routeProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $routeProvider, markedProvider) {
+
+        markedProvider.setOptions({
+            gfm: true,
+            tables: true,
+            highlight: function (code) {
+                return hljs.highlightAuto(code).value;
+            }
+        });
 
         $stateProvider
 
