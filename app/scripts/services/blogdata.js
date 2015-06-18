@@ -37,7 +37,7 @@ angular.module('myblogApp')
 
             }else{
                 //rerun this function
-                setTimeout(readMetadata(defer), 1000);
+                setTimeout(readMetadata(), 1000);
             }
         }
 
