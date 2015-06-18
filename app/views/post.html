@@ -1,0 +1,18 @@
+<div class="email-content-body">
+    <div class="email-content-header pure-g">
+        <div class="pure-u-1-2">
+            <h1 class="email-content-title">{{selectedPostMetadata.title}}</h1>
+            <p class="email-content-subtitle">
+                By <a>{{selectedPostMetadata.author}}</a>, <span>{{selectedPostMetadata.date}}</span>
+            </p>
+        </div>
+
+        <div class="email-content-controls pure-u-1-2">
+            <button class="secondary-button pure-button">Reply</button>
+            <button class="secondary-button pure-button">Forward</button>
+            <button class="secondary-button pure-button">Move to</button>
+        </div>
+    </div>
+    <div btf-markdown ng-include="getSelectedItem()">
+    </div>
+</div>

@@ -1,0 +1,106 @@
+
+    <div id="nav" class="pure-u">
+        <a href="#" class="nav-menu-button">Menu</a>
+
+        <div class="nav-inner">
+            <img class="email-avatar" alt="My Avatar" height="64" width="64" src="images/self.jpg">
+            <button class="primary-button pure-button">Rajats Blog</button>
+
+            <div class="pure-menu">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item" ng-repeat="cat in allCategoriesWithCount" >
+                        <a ng-click="menuClick(cat.category)" class="pure-menu-link" ng-class="{'active-link':cat.category===selectedCategory}">
+                            {{cat.category}} <span class="email-count">({{cat.count}})</span></a>
+                    </li>
+                    <!--li class="pure-menu-item"><a href="#" class="pure-menu-link">AngularJS</a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Ionic</a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Java</a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Snippets</a></li>
+                    <li class="pure-menu-heading">GitHub</li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><span class="email-label-personal"></span>Personal</a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><span class="email-label-work"></span>Work</a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><span class="email-label-travel"></span>Travel</a></li-->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--div id="list" class="pure-u-1" ui-view="ItemListContent">
+
+    </div-->
+    <div class="email-item  pure-g" ng-repeat="post in categoryList" ng-class="{'email-item-unread email-item-selected': post.slug===selectedItem}">
+        <div class="pure-u">
+            <img class="email-avatar" alt="Tilo Mitra&#x27;s avatar" height="64" width="64" src="img/common/tilo-avatar.png">
+        </div>
+
+        <div class="pure-u-3-4">
+            <h5 class="email-name">{{post.date}}</h5>
+            <h4 class="email-subject">{{post.title}}</h4>
+            <p class="email-desc">
+                {{post.description}}
+                {{post.slug}}
+                {{selectedItem}}
+            </p>
+        </div>
+    </div>
+
+
+    <div class="email-content-body">
+        <div class="email-content-header pure-g">
+            <div class="pure-u-1-2">
+                <h1 class="email-content-title">{{selectedPostMetadata.title}}</h1>
+                <p class="email-content-subtitle">
+                    By <a>{{selectedPostMetadata.author}}</a>, <span>{{selectedPostMetadata.date}}</span>
+                </p>
+            </div>
+
+            <div class="email-content-controls pure-u-1-2">
+                <button class="secondary-button pure-button">Reply</button>
+                <button class="secondary-button pure-button">Forward</button>
+                <button class="secondary-button pure-button">Move to</button>
+            </div>
+        </div>
+        <div btf-markdown ng-include="getSelectedItem()">
+        </div>
+    </div>
+
+    <!--div id="main" class="pure-u-1" >
+        <div class="email-content" ui-view="ItemContent">
+            <!--
+            <div class="email-content-header pure-g">
+                <div class="pure-u-1-2">
+                    <h1 class="email-content-title">Hello from Toronto</h1>
+                    <p class="email-content-subtitle">
+                        From <a>Tilo Mitra</a> at <span>3:56pm, April 3, 2012</span>
+                    </p>
+                </div>
+
+                <div class="email-content-controls pure-u-1-2">
+                    <button class="secondary-button pure-button">Reply</button>
+                    <button class="secondary-button pure-button">Forward</button>
+                    <button class="secondary-button pure-button">Move to</button>
+                </div>
+            </div>
+
+            <div class="email-content-body">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+                <p>
+                    Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <p>
+                    Aliquam ac feugiat dolor. Proin mattis massa sit amet enim iaculis tincidunt. Mauris tempor mi vitae sem aliquet pharetra. Fusce in dui purus, nec malesuada mauris. Curabitur ornare arcu quis mi blandit laoreet. Vivamus imperdiet fermentum mauris, ac posuere urna tempor at. Duis pellentesque justo ac sapien aliquet egestas. Morbi enim mi, porta eget ullamcorper at, pharetra id lorem.
+                </p>
+                <p>
+                    Donec sagittis dolor ut quam pharetra pretium varius in nibh. Suspendisse potenti. Donec imperdiet, velit vel adipiscing bibendum, leo eros tristique augue, eu rutrum lacus sapien vel quam. Nam orci arcu, luctus quis vestibulum ut, ullamcorper ut enim. Morbi semper erat quis orci aliquet condimentum. Nam interdum mauris sed massa dignissim rhoncus.
+                </p>
+                <p>
+                    Regards,<br>
+                    Tilo
+                </p>
+            </div>
+
+        </div>
+        </div-->
+

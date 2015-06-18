@@ -1,0 +1,62 @@
+<div id="nav" class="pure-u">
+    <a href="#" class="nav-menu-button">Menu</a>
+
+    <div class="nav-inner">
+        <img class="email-avatar" alt="My Avatar" height="64" width="64" src="images/self.jpg">
+        <button class="primary-button pure-button">Rajats Blog</button>
+
+        <div class="pure-menu">
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item" ng-repeat="cat in allCategoriesWithCount" >
+                    <a ng-click="menuClick(cat.category)" class="pure-menu-link" ng-class="{'active-link':cat.category===selectedCategory}">
+                        {{cat.category}} <span class="email-count">({{cat.count}})</span></a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="list" class="pure-u-1">
+    <div class="email-item  pure-g"  ng-repeat="post in categoryList" ng-class="{'email-item-unread email-item-selected': post.slug===selectedItem}"
+         ng-click="listClick(post.slug)" >
+        <div class="pure-u">
+            <img class="email-avatar" alt="Tilo Mitra&#x27;s avatar" height="64" width="64" src="img/common/tilo-avatar.png">
+        </div>
+
+        <div class="pure-u-3-4">
+            <h5 class="email-name">{{post.date}}</h5>
+            <h4 class="email-subject">{{post.title}}</h4>
+            <p class="email-desc">
+                {{post.description}}
+                {{post.slug}}
+
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<div id="main" class="pure-u-1">
+    <div class="email-content">
+        <div class="email-content-header pure-g">
+            <div class="pure-u-1-2">
+                <h1 class="email-content-title">{{selectedPostMetadata.title}}</h1>
+                <p class="email-content-subtitle">
+                    By <a>{{selectedPostMetadata.author}}</a>, <span>{{selectedPostMetadata.date}}</span>
+                </p>
+            </div>
+
+            <div class="email-content-controls pure-u-1-2">
+                <button class="secondary-button pure-button">Reply</button>
+                <button class="secondary-button pure-button">Forward</button>
+                <button class="secondary-button pure-button">Move to</button>
+            </div>
+        </div>
+
+        <div class="email-content-body">
+            <div btf-markdown ng-include="getSelectedItem()">
+            </div>
+        </div>
+    </div>
+</div>
