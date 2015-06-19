@@ -8,7 +8,7 @@
         <div class="pure-menu">
             <ul class="pure-menu-list">
                 <li class="pure-menu-item" ng-repeat="cat in allCategoriesWithCount" >
-                    <a ng-click="menuClick(cat.category)" class="pure-menu-link" ng-class="{'active-link':cat.category===selectedCategory}">
+                    <a ng-href="#/q/{{cat.category}}"  class="pure-menu-link" ng-class="{'active-link':cat.category===selectedCategory}">
                         {{cat.category}} <span class="email-count">({{cat.count}})</span></a>
                 </li>
 
@@ -18,20 +18,21 @@
 </div>
 
 <div id="list" class="pure-u-1">
-    <div class="email-item  pure-g"  ng-repeat="post in categoryList" ng-class="{'email-item-unread email-item-selected': post.slug===selectedItem}"
-         ng-click="listClick(post.slug)" >
+    <a style="color:black" ng-href="#/q/{{selectedCategory}}/{{post.slug}}" class="email-item  pure-g"  ng-repeat="post in categoryList" ng-class="{'email-item-unread email-item-selected': post.slug===selectedItem}"
+         >
         <div class="pure-u">
             <!--img class="email-avatar" alt="Tilo Mitra&#x27;s avatar" height="64" width="64" src="img/common/tilo-avatar.png"-->
         </div>
-
-        <div class="pure-u-3-4">
-            <h5 class="email-name">{{post.date}}</h5>
-            <h4 class="email-subject">{{post.title}}</h4>
-            <p class="email-desc">
-                {{post.description}}
-            </p>
-        </div>
-    </div>
+        <!--a style=""  class="pure-u-3-4"-->
+            <div class="pure-u-3-4" >
+                <h5 class="email-name">{{post.date}}</h5>
+                <h4 class="email-subject">{{post.title}}</h4>
+                <p class="email-desc">
+                    {{post.description}}
+                </p>
+            </div>
+        <!--/a-->
+    </a>
 
 </div>
 
@@ -46,15 +47,44 @@
             </div>
 
             <div class="email-content-controls pure-u-1-2">
-                <button class="secondary-button pure-button">Reply</button>
-                <button class="secondary-button pure-button">Forward</button>
-                <button class="secondary-button pure-button">Move to</button>
+                <button class="secondary-button pure-button" socialshare="" socialshare-provider="facebook" socialshare-url="{{currentPage}}" socialshare-text="{{selectedPostMetadata.title}}">
+                    <i class="fa fa-share"></i>
+
+                    Facebook
+                </button>
+                <button class="secondary-button pure-button" socialshare="" socialshare-provider="twitter" socialshare-url="{{currentPage}}" socialshare-text="{{selectedPostMetadata.title}}">
+                    <i class="fa fa-share"></i>
+                    Twitter</button>
+                <button class="secondary-button pure-button" socialshare="" socialshare-provider="linkedin" socialshare-url="{{currentPage}}" socialshare-text="{{selectedPostMetadata.title}}">
+                    <i class="fa fa-share"></i>
+                    LinkedIn</button>
             </div>
         </div>
 
         <div class="email-content-body">
             <div marked ng-include="getSelectedItem()">
             </div>
+
+
+            <!-- discuss specific -->
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES * * */
+                var disqus_shortname = 'rajatsblog';
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            <!-- discuss ends -->
+
         </div>
+
+
+
     </div>
 </div>

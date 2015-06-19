@@ -8,7 +8,7 @@
  * Controller of the myblogApp
  */
 angular.module('myblogApp')
-  .controller('MainCtrl', function ($scope, $stateParams, $state,blogdata) {
+  .controller('MainCtrl', function ($scope, $stateParams, $state, blogdata, $location) {
         /*Data Elements*/
         $scope.metaData = blogdata.getAllPostsMetadata();
         //Menu 1
@@ -111,4 +111,6 @@ angular.module('myblogApp')
             //selectPost(slug);
             $state.go('q2',{category:$scope.selectedCategory, slug:slug});
         }
+
+        $scope.currentPage = $location.absUrl();
   });

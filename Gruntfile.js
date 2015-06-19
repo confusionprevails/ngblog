@@ -346,6 +346,7 @@ module.exports = function (grunt) {
             'styles/fonts/{,*/}*.*',
               'posts/*.md',
               'posts/*.js'
+
           ]
         }, {
           expand: true,
@@ -437,6 +438,22 @@ module.exports = function (grunt) {
     'usemin',
     'htmlmin'
   ]);
+
+    grunt.registerTask('cbuild', [
+        'clean:dist',
+        'wiredep',
+        'useminPrepare',
+        'concurrent:dist',
+        'autoprefixer',
+        'concat',
+        'ngAnnotate',
+        'copy:dist',
+        'cdnify',
+        'cssmin',
+        'filerev',
+        'usemin',
+        'htmlmin'
+    ]);
 
   grunt.registerTask('default', [
     'newer:jshint',

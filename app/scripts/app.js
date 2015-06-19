@@ -17,7 +17,7 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch','ui.router','hc.marked'/*'btford.markdown'*/
+    'ngTouch','720kb.socialshare', 'ui.router','hc.marked'/*'btford.markdown'*/
   ])
   .config(function ($stateProvider, $urlRouterProvider, $routeProvider, markedProvider) {
 
