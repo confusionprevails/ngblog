@@ -11,6 +11,7 @@ angular.module('myblogApp')
   .controller('MainCtrl', function ($scope, $stateParams, $state, blogdata, $location) {
         /*Data Elements*/
         $scope.metaData = blogdata.getAllPostsMetadata();
+        $scope.toggle=false;
         //Menu 1
         $scope.allCategoriesWithCount = blogdata.getAllCategoriesWithCount();
 
@@ -113,4 +114,8 @@ angular.module('myblogApp')
         }
 
         $scope.currentPage = $location.absUrl();
+
+        $scope.toggleMenu=function(){
+            $scope.toggle=!$scope.toggle;
+        }
   });
